@@ -266,9 +266,15 @@ return [
                     'url'  => '/datagajis',
                     'icon_color' => 'cyan',
                 ],
-                [
+                /* [
                     'text' => 'Data Pph dan Pembulatan Gaji 13 dan THR',
                     'url'  => '/pphpembulatans',
+                    'icon_color' => 'red',
+                ], */
+
+                [
+                    'text' => 'Data Pph 13 dan THR',
+                    'url' => '/pphthr',
                     'icon_color' => 'red',
                 ],
             ],
@@ -308,6 +314,25 @@ return [
         [
             'text' => 'Data Proyeksi Gaji',
             'url'  => '/proyeksigajis',
+            'icon'  => 'fas fa-table',
+            'icon_color' => 'red',
+        ],
+        [
+            'text' => 'Data Proyeksi Gaji PAK',
+            'url'  => '/proyeksigajipak',
+            'icon'  => 'fas fa-table',
+            'icon_color' => 'red',
+        ],
+
+        [
+            'text' => 'Data CPNS',
+            'url'  => '/gajicpns',
+            'icon'  => 'fas fa-table',
+            'icon_color' => 'red',
+        ],
+        [
+            'text' => 'Data Pegawai Pensiun',
+            'url'  => '/pegawaipensiun',
             'icon'  => 'fas fa-table',
             'icon_color' => 'red',
         ],

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProyeksiGajiPakController;
+use App\Http\Controllers\PphThrController;
+use App\Http\Controllers\GajiCpnsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,3 +82,22 @@ Route::resource('konfigurasis', \App\Http\Controllers\KonfigurasiController::cla
 
 Route::resource('pelengkaps', \App\Http\Controllers\PelengkapController::class)
 ->middleware('auth');
+
+/* --------------- Data Proyeksi Gaji PAK --------------- */
+Route::get('/proyeksigajipak', [ProyeksiGajiPakController::class, 'index']);
+Route::get('/proyeksigajipak/hitung-proyeksi-pak', [ProyeksiGajiPakController::class, 'hitungProyeksiGajiPak']);
+Route::get('/proyeksigajipak/cetak-proyeksi-pak/{id}', [ProyeksiGajiPakController::class, 'cetakProyeksiGajiPak']);
+
+/* --------------- Data PPH 13 dan THR --------------- */
+Route::get('/pphthr', [PphThrController::class, 'index']);
+Route::get('/pphthr/tarik-pphthr', [PphThrController::class, 'tarikPphThr']);
+Route::get('/pphthr/edit-pphthr/{id}', [PphThrController::class, 'editPphThr']);
+Route::put('/pphthr/update-pphthr/{id}', [PphThrController::class, 'updatePphThr']);
+
+/* --------------- Data Gaji CPNS --------------- */
+
+Route::get('/gajicpns', [GajiCpnsController::class, 'index']);
+Route::get('/gajicpns/tarik-gajicpns', [GajiCpnsController::class, 'tarikGajiCpns']);
+Route::get('/gajicpns/edit-gajicpns', [GajiCpnsController::class, 'edit']);
+Route::put('/gajicpns/update-gajicpns', [GajiCpnsController::class, 'update']);
+

@@ -17,7 +17,7 @@ class KonfigurasiController extends Controller
     public function index()
     {
         //
-        $konfigurasis = Konfigurasi::leftJoin('jenisgaji', 'jenisgaji.id', '=', 'konfigurasi.bulanacuan')
+        $konfigurasis = Konfigurasi::leftJoin('jenisgaji', 'jenisgaji.id', '=', 'konfigurasi.bulanacuanmurni')
                         ->select('konfigurasi.*', 'jenisgaji.jenisgaji')
                         ->get();
         
@@ -89,7 +89,8 @@ class KonfigurasiController extends Controller
 
         $konfigurasi = Konfigurasi::find($id);
         $konfigurasi->tahunanggaran = $request->tahunanggaran;
-        $konfigurasi->bulanacuan = $request->bulanacuan;
+        $konfigurasi->bulanacuanmurni = $request->bulanacuanmurni;
+        $konfigurasi->bulanacuanpak = $request->bulanacuanpak;
         $konfigurasi->nilaiaccress = $request->nilaiaccress;
         $konfigurasi->save();
 

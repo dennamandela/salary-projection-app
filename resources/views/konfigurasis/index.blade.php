@@ -34,7 +34,8 @@
                             <!-- <th>Id Unit</th>
                             <th>Id Tahun</th> -->
                             <th>Tahun Anggaran</th>
-                            <th>Bulan Acuan</th>
+                            <th>Bulan Acuan Murni</th>
+                            <th>Bulan Acuan PAK</th>
                             <th>Nilai Accress</th>
                             <th>Opsi</th>
                         </tr>
@@ -44,7 +45,8 @@
                             <tr>
                                 <!-- <td>{{$key+1}}</td> -->
                                 <td>{{$konfigurasi->tahunanggaran}}</td>
-                                <td>{{$konfigurasi->jenisgaji}}</td>
+                                <td>{{$konfigurasi->bulanacuanmurni}}</td>
+                                <td>{{$konfigurasi->bulanacuanpak}}</td>
                                 <td>{{$konfigurasi->nilaiaccress}}</td>
                                 <td>
                                     <a href="{{route('konfigurasis.edit', $konfigurasi)}}" class="fas fa-edit  fa-lg"></a>

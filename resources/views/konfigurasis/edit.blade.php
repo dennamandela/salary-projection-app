@@ -24,7 +24,16 @@
                     <tr><td></td></tr>
                     <tr><td></td></tr>
                     <tr>
-                        <td><label for="exampleInputBulanacuan">Bulan Acuan</label></td>
+                        <td><label for="exampleInputBulanacuan">Bulan Acuan Murni</label></td>
+                        <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuan">
+                            <option>-- Bulan Acuan --</option>
+                            @foreach($jenisgajis as $jenisgaji)
+                                <option value="{{ $jenisgaji->id }}">{{$jenisgaji->jenisgaji}}</option>
+                            @endforeach
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td><label for="exampleInputBulanacuan">Bulan Acuan PAK</label></td>
                         <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuan">
                             <option>-- Bulan Acuan --</option>
                             @foreach($jenisgajis as $jenisgaji)

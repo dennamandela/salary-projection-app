@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKonfigurasiTable extends Migration
+class CreatePph13thrTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateKonfigurasiTable extends Migration
      */
     public function up()
     {
-        Schema::create('konfigurasi', function (Blueprint $table) {
+        Schema::create('pph13thr', function (Blueprint $table) {
             $table->id();
+            $table->string('namaunit');
             $table->string('tahunanggaran');
-            $table->integer('bulanacuanmurni');
-            $table->string('bulanacuanpak');
-            $table->decimal('nilaiaccress',18,2)->default(0);
+            $table->decimal('nilaipphlalu', 18,2)->default(0);
+            $table->integer('pengali');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateKonfigurasiTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('konfigurasi');
+        Schema::dropIfExists('pph13thr');
     }
 }
