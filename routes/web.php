@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProyeksiGajiPakController;
 use App\Http\Controllers\PphThrController;
 use App\Http\Controllers\GajiCpnsController;
+use App\Http\Controllers\PegawaiPensiunController;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,6 +99,12 @@ Route::put('/pphthr/update-pphthr/{id}', [PphThrController::class, 'updatePphThr
 
 Route::get('/gajicpns', [GajiCpnsController::class, 'index']);
 Route::get('/gajicpns/tarik-gajicpns', [GajiCpnsController::class, 'tarikGajiCpns']);
-Route::get('/gajicpns/edit-gajicpns', [GajiCpnsController::class, 'edit']);
-Route::put('/gajicpns/update-gajicpns', [GajiCpnsController::class, 'update']);
+Route::get('/gajicpns/edit-gajicpns/{id}', [GajiCpnsController::class, 'edit']);
+Route::put('/gajicpns/update-gajicpns/{id}', [GajiCpnsController::class, 'update']);
+
+/* --------------- Data Gaji Pensiun --------------- */
+Route::get('/pegawaipensiun', [PegawaiPensiunController::class, 'index']);
+Route::get('/pegawaipensiun/tarikgaji', [PegawaiPensiunController::class, 'tarikGajiPensiun']);
+Route::get('/pegawaipensiun/edit/{id}', [PegawaiPensiunController::class, 'edit']);
+Route::put('/pegawaipensiun/update/{id}', [PegawaiPensiunController::class, 'update']);
 

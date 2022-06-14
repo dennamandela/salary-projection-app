@@ -21,8 +21,10 @@ class PphThrController extends Controller
 
     public function editPphThr($id) {
         $pphthr = PphThr::find($id);
-        if (!$pphthr) return redirect('/pphthr')
-            ->with('error_message', 'data tidak ditemukan');
-        return view('pph13thr.edit', compact('pphthr'));
+        if (!$pphthr) {
+            return redirect('/pphthr')->with('error_message', 'data tidak ditemukan');
+        }else {
+            return view('pph13thr.edit', compact('pphthr'));
+        }
     }
 }

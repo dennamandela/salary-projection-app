@@ -331,8 +331,14 @@ return [
             'icon_color' => 'red',
         ],
         [
-            'text' => 'Data Pegawai Pensiun',
+            'text' => 'Data Pensiun',
             'url'  => '/pegawaipensiun',
+            'icon'  => 'fas fa-table',
+            'icon_color' => 'red',
+        ],
+        [
+            'text' => 'Data Mutasi Antar SKPD',
+            'url'  => '/skpd',
             'icon'  => 'fas fa-table',
             'icon_color' => 'red',
         ],

@@ -69,11 +69,13 @@ class KonfigurasiController extends Controller
         //
         $jenisgajis = Jenisgaji::all();
         $konfigurasi = Konfigurasi::find($id);
-        if (!$konfigurasi) return redirect()->route('konfigurasis.index')
-            ->with('error_message', 'data tidak ditemukan');
-        return view('konfigurasis.edit', [
-            'konfigurasi' => $konfigurasi
-            ], compact('jenisgajis'));
+        if (!$konfigurasi) {
+            return redirect()->route('konfigurasis.index')->with('error_message', 'data tidak ditemukan');
+        }else {
+            return view('konfigurasis.edit', [
+                'konfigurasi' => $konfigurasi
+                ], compact('jenisgajis'));
+        }
     }
 
     /**

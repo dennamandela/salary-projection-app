@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Unit;
 use App\Models\GajiCpns;
 use App\Models\Tahun;
-use App\Models\JenisGaji;
+use App\Models\Jenisgaji;
 use DB;
 
 class GajiCpnsController extends Controller
@@ -35,8 +35,11 @@ class GajiCpnsController extends Controller
         $tahuns = Tahun::all();
         $jenisgajis = Jenisgaji::all();
         $gajicpns = GajiCpns::find($id);
-        if (!$gajicpns) return redirect('/gajicpns')->with('error_message', 'data tidak ditemukan');
-        return view('gajicpns.edit', compact('gajicpns', 'units', 'tahuns', 'jenisgajis'));
+        if (!$gajicpns) {
+            return redirect('/gajicpns')->with('error_message', 'data tidak ditemukan');
+        }else {
+            return view('gajicpns.edit', compact('gajicpns', 'units', 'tahuns', 'jenisgajis'));
+        }
     }
 
     public function update (Request $request, $id) {

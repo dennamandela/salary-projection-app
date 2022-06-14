@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Daftar Gaji CPNS')
+@section('title', 'Daftar Gaji Pensiun')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Daftar Gaji CPNS</h1>
+    <h1 class="m-0 text-dark">Daftar Gaji Pensiun</h1>
 @stop
 
 @section('content')
@@ -35,8 +35,8 @@
                     <!-- <br>
                     <br> -->
 
-                    <a href="{{url('/gajicpns/tarik-gajicpns')}}" class="btn btn-primary mb-2">
-                        Tarik Data Gaji CPNS
+                    <a href="{{url('/pegawaipensiun/tarikgaji')}}" class="btn btn-primary mb-2">
+                        Tarik Data Gaji Pensiun
                     </a>
 
                     <table class="table table-hover table-bordered table-stripped" id="example2" style="font-size: 10px">
@@ -64,30 +64,30 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($gajicpns as $key => $gajicpns)
+                        @foreach($pegawaipensiun as $key => $pensiun)
                             <tr>
                                 <!-- <td>{{$key+1}}</td> -->
                                 <!-- <td>{{$datagaji->id_unit}}</td> -->
-                                <td>{{$gajicpns->namaunit}}</td>
+                                <td>{{$pensiun->namaunit}}</td>
                                 <!-- <td>{{$datagaji->id_tahun}}</td> -->
-                                <td>{{$gajicpns->tahun}}</td>
+                                <td>{{$pensiun->tahun}}</td>
                                 <!-- <td>{{$datagaji->id_jenisgaji}}</td> -->
-                                <td>{{$gajicpns->jenisgaji}}</td>
-                                <td>@money($gajicpns->gapok)</td>
-                                <td>@money($gajicpns->tkel)</td>
-                                <td>@money($gajicpns->tjab)</td>
-                                <td>@money($gajicpns->tfung)</td>
-                                <td>@money($gajicpns->tumum)</td>
-                                <td>@money($gajicpns->tberas)</td>
-                                <td>@money($gajicpns->tpph)</td>
-                                <td>@money($gajicpns->pembulatan)</td>
-                                <td>@money($gajicpns->bpjs)</td>
-                                <td>@money($gajicpns->jkk)</td>
-                                <td>@money($gajicpns->jkm)</td>
-                                <td>@money($gajicpns->tapera)</td>
+                                <td>{{$pensiun->jenisgaji}}</td>
+                                <td>@money($pensiun->gapok)</td>
+                                <td>@money($pensiun->tkel)</td>
+                                <td>@money($pensiun->tjab)</td>
+                                <td>@money($pensiun->tfung)</td>
+                                <td>@money($pensiun->tumum)</td>
+                                <td>@money($pensiun->tberas)</td>
+                                <td>@money($pensiun->tpph)</td>
+                                <td>@money($pensiun->pembulatan)</td>
+                                <td>@money($pensiun->bpjs)</td>
+                                <td>@money($pensiun->jkk)</td>
+                                <td>@money($pensiun->jkm)</td>
+                                <td>@money($pensiun->tapera)</td>
                                 <td>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="{{url('gajicpns/edit-gajicpns', $gajicpns->id)}}" class="fas fa-edit  fa-lg"></a>
+                                    <a href="{{url('pegawaipensiun/edit', $pensiun->id)}}" class="fas fa-edit  fa-lg"></a>
                                 </td>
                             </tr>
                         @endforeach
