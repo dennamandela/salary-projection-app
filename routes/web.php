@@ -112,5 +112,10 @@ Route::put('/pegawaipensiun/update/{id}', [PegawaiPensiunController::class, 'upd
 /* --------------- Data Gaji Pensiun --------------- */
 Route::get('/skpd', [MutasiSkpdController::class, 'index']);
 Route::get('/skpd/create-skpd', [MutasiSkpdController::class, 'create']);
-Route::post('/skpd/post-skpd', [MutasiSkpdController::class, 'post']);
+Route::post('/skpd/post-skpd', [MutasiSkpdController::class, 'postSkpd']);
+Route::get('/skpd/edit-skpd/{id}', [MutasiSkpdController::class, 'editSkpd']);
+Route::put('/skpd/update-skpd/{id}', [MutasiSkpdController::class, 'updateSkpd']);
+Route::get('/skpd/delete-skpd/{id}', [MutasiSkpdController::class, 'deleteSkpd']);
+
+
 

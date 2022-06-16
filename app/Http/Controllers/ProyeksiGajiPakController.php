@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProyeksiGajiPak;
+use App\Models\Unit;
+use App\Models\Tahun;
 use DB;
 
 class ProyeksiGajiPakController extends Controller
 {
     public function index () {
-
+        $units = Unit::all();
+        $tahuns = Tahun::all();
         $proyeksigajipak = ProyeksiGajiPak::leftjoin('unit', 'unit.namaunit', '=', 'proyeksigajipak.namaunit')
                             ->leftjoin('tahun', 'tahun.tahun', '=', 'proyeksigajipak.tahun')
                             ->orderby('kodeunit', 'asc')

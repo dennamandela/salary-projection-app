@@ -87,8 +87,8 @@
                                 <td>@money($mutasiskpd->tapera)</td>
                                 <td>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="{{url('/skpd/edit', $mutasiskpd->id)}}" class="fas fa-edit  fa-lg"></a>
-                                    <a href="{{url('/skpd/hapus', $mutasiskpd->id)}}" class="fas fa-trash  fa-lg"></a>
+                                    <a href="{{url('/skpd/edit-skpd', $mutasiskpd->id)}}" class="fas fa-edit  fa-lg"></a>
+                                    <a href="{{url('/skpd/delete-skpd', $mutasiskpd->id)}}" class="fas fa-trash  fa-lg"></a>
                                 </td>
                             </tr>
                         @endforeach

@@ -25,19 +25,23 @@
                     <tr><td></td></tr>
                     <tr>
                         <td><label for="exampleInputBulanacuan">Bulan Acuan Murni</label></td>
-                        <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuan">
-                            <option>-- Bulan Acuan --</option>
+                        <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuanmurni">
+                            <option>-- Bulan Acuan Murni--</option>
                             @foreach($jenisgajis as $jenisgaji)
-                                <option value="{{ $jenisgaji->id }}">{{$jenisgaji->jenisgaji}}</option>
+                                <option value="{{ $jenisgaji->id }}"
+                                    {{ $jenisgaji->id == $konfigurasi->bulanacuanmurni ? 'selected="selected"' : '' }}>
+                                    {{ $jenisgaji->jenisgaji() }}</option>
                             @endforeach
                         </select></td>
                     </tr>
                     <tr>
                         <td><label for="exampleInputBulanacuan">Bulan Acuan PAK</label></td>
-                        <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuan">
-                            <option>-- Bulan Acuan --</option>
+                        <td><select class="form-control" id="exampleInputBulanacuan" name="bulanacuanpak">
+                            <option>-- Bulan Acuan PAK--</option>
                             @foreach($jenisgajis as $jenisgaji)
-                                <option value="{{ $jenisgaji->id }}">{{$jenisgaji->jenisgaji}}</option>
+                                <option value="{{ $jenisgaji->id }}"
+                                    {{ $jenisgaji->id == $konfigurasi->bulanacuanpak ? 'selected="selected"' : '' }}>
+                                    {{ $jenisgaji->jenisgaji() }}</option>
                             @endforeach
                         </select></td>
                     </tr>
