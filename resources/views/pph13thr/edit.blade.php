@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form action="{{ url ('/pphthr/update-pphthr', $pphthr)}}" method="post">
+    <form action="{{ url ('/pphthr/update-pphthr', $pphthr->id)}}" method="post">
         @method('PUT')
         @csrf
     <div class="row">
@@ -19,10 +19,12 @@
                     <tr>
                         <td><label for="exampleInputUnit">Unit</label></td>
                         <!-- <input type="text" class="form-control" id="exampleInputUnit" name="unit" value="{{$datagaji->namaunit ?? old('namaunit')}}"> -->
-                        <td><select class="form-control" id="exampleInputUnit" name="unit" disabled>
-                            <!-- @foreach($units as $unit)                         -->
-                                <option value="$pphthr->namaunit"{{$pphthr->namaunit ? 'selected' : ''}}>{{$pphthr->namaunit}}</option>
-                            <!-- @endforeach -->
+                        <td><select class="form-control" id="exampleInputUnit" name="namaunit" disabled>
+                            @foreach($units as $unit)
+                                <option value="{{ $unit->namaunit }}"
+                                    {{$unit->namaunit == $pphthr->namaunit ? 'selected="selected"' : '' }}>
+                                    {{$unit->namaunit () }}</option>
+                            @endforeach
                         </select></td>
                         <!-- <select name="unit" class="form-control custom-select">
                             <option value="">Select unit</option>
@@ -30,6 +32,17 @@
                                 <option value="{{ $unit->id }}" @if(old('id') == $unit->id || $unit->id == $datagaji->id_unit) selected @endif>{{ $unit->namaunit }}</option>
                                 @endforeach
                         </select> -->
+                    </tr>
+                    <tr>
+                        <td><label for="exampleInputUnit">Tahun Anggaran</label></td>
+                        <!-- <input type="text" class="form-control" id="exampleInputUnit" name="unit" value="{{$datagaji->namaunit ?? old('namaunit')}}"> -->
+                        <td><select class="form-control" id="exampleInputTahunAnggaran" name="tahunanggaran" disabled>
+                            @foreach($tahuns as $tahun)
+                                <option value="{{ $tahun->tahun }}"
+                                    {{$tahun->tahun == $pphthr->tahunanggaran ? 'selected="selected"' : '' }}>
+                                    {{$tahun->tahun () }}</option>
+                            @endforeach
+                        </select></td>
                     </tr>
                     <tr></tr>
                     <tr></tr>
@@ -48,7 +61,7 @@
                         <td><input type="text" id="exampleInputNilaiPphLalu" placeholder="Nilai Pph Lalu" name="nilaipphlalu" value="{{$pphthr->nilaipphlalu ?? old('nilaipphlalu')}}"></td>
                         <td></td><td></td><td></td><td></td>
                         <td><label for="exampleInputPengali">Pengali</label></td>
-                        <td><input type="text" id="exampleInputPengali" placeholder="Pengali" name="pengli" value="{{$pphthr->pengali ?? old('pengali')}}"></td>
+                        <td><input type="text" id="exampleInputPengali" placeholder="Pengali" name="pengali" value="{{$pphthr->pengali ?? old('pengali')}}"></td>
                     </tr>
                     </table>
 

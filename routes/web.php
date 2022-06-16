@@ -5,6 +5,7 @@ use App\Http\Controllers\ProyeksiGajiPakController;
 use App\Http\Controllers\PphThrController;
 use App\Http\Controllers\GajiCpnsController;
 use App\Http\Controllers\PegawaiPensiunController;
+use App\Http\Controllers\MutasiSkpdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,4 +108,9 @@ Route::get('/pegawaipensiun', [PegawaiPensiunController::class, 'index']);
 Route::get('/pegawaipensiun/tarikgaji', [PegawaiPensiunController::class, 'tarikGajiPensiun']);
 Route::get('/pegawaipensiun/edit/{id}', [PegawaiPensiunController::class, 'edit']);
 Route::put('/pegawaipensiun/update/{id}', [PegawaiPensiunController::class, 'update']);
+
+/* --------------- Data Gaji Pensiun --------------- */
+Route::get('/skpd', [MutasiSkpdController::class, 'index']);
+Route::get('/skpd/create-skpd', [MutasiSkpdController::class, 'create']);
+Route::post('/skpd/post-skpd', [MutasiSkpdController::class, 'post']);
 

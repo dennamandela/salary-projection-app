@@ -58,7 +58,7 @@
                                 <td>{{$datapphthr->pengali}}</td>
                                 <td>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="{{url('/pphthr/edit', $datapphthr)}}" class="fas fa-edit  fa-lg"></a>
+                                    <a href="{{url('/pphthr/edit', $datapphthr->id)}}" class="fas fa-edit  fa-lg"></a>
                                 </td>
                             </tr>
                         @endforeach
